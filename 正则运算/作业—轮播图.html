@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图-1</title>
+    <style>
+        div {
+            width: 500px;
+            height: 500px;
+            margin: 0px auto;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .a {
+            margin-top: 250px;
+            position: absolute;
+        }
+
+        .b {
+            margin-left: 430px;
+            position: absolute;
+            margin-top: 250px;
+        }
+    </style>
+    <script>
+
+        var index = 5;
+        var over;
+
+        /*
+            目的：通过计时器来实现自动切换图片的轮播图效果
+            分析:
+                    1.页面加载时执行轮播图播放 -〉找到页面加载函数 onload
+                    2.在onload中执行自定义函数init()
+                    3.init中的内容
+                          3.1 找到img
+                          3.2 开启计时器
+                          3.3 自动切换图片
+         */
+        function changeImg() {
+            //-- 找到img
+            var element = document.getElementsByTagName("img")[0];
+            //-- 给img的src属性提供值
+            element.src = "../img/veer-1" + index + ".jpg";
+            index = index + 1;
+            if (index == 9) {
+                // window.clearInterval(over);
+                index = 5;
+            }
+        }
+        function init() {
+            over = setInterval("changeImg()", 2000);
+        }
+    </script>
+</head>
+<!--当页面加载时执行-->
+<body onload="init()">
+<div>
+    <button class="a" onclick="function ADD() {
+                  var element = document.getElementsByTagName('img')[0];
+ element.src = '../img/veer-1'+index+'.jpg';
+    index = index - 1;
+    if (index == 4){
+    // window.clearInterval(over);
+    index = 8;
+    }
+    }ADD()">《上一张
+    </button>
+    <button class="b" onclick="function sub() {
+                        var element = document.getElementsByTagName('img')[0];
+ element.src = '../img/veer-1'+index+'.jpg';
+    index = index + 1;
+    if (index == 9){
+    // window.clearInterval(over);
+    index = 5;
+    }
+    }sub()">下一张》
+    </button>
+    <img src="../img/veer-15.jpg" alt="UP主挂了!" width="498" height="498">
+</div>
+</body>
+</html>

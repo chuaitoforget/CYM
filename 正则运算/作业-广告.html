@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>广告</title>
+    <style>
+        div{
+            margin: 50px auto;
+            width: 802px;
+            height: 402px;
+            border: 1px solid black;
+            position: relative;
+        }
+        h3{
+            text-align: center;
+        }
+        .a{
+            position: absolute;
+            margin-left: 751px;
+        }
+    </style>
+    <script>
+        var time;
+
+        window.onload = function() {
+            time = window.setInterval("show()", 5000);
+        }
+
+        // 显示广告的方法
+        function show() {
+            // 获得广告的div元素
+            var adDiv = document.getElementById("adiv");
+            adDiv.style.display = "block";
+
+            window.clearInterval(time); // 清空掉之前设置的定时
+            time = window.setInterval("hide()", 3000); // 重新再设置一个定时
+        }
+        // 隐藏广告的方法
+        function hide() {
+            // 获得广告的div元素
+            var adDiv = document.getElementById("adiv");
+            adDiv.style.display = "none";
+            time=window.setInterval("show()",5000); // 清空掉之前设置的定时
+        }
+        function Mouseover(obj) {
+           var adDiv=document.getElementById("adiv");
+           adDiv.style.display="none";
+           time=window.setInterval("show()",5000);
+        }
+
+    </script>
+</head>
+<body>
+
+<div id="adiv" style="display:none">
+    <button class="a" onmouseover="Mouseover(this)">关闭×</button>
+    <h3> 你掉头发吗？这是一种病，霸王洗发水防脱发，发质清亮有光泽!
+        快来抢购吧，<br>只要888，霸王带回家!!!</h3>
+    <img src="../img/veer-15.jpg" height="300" width="800"/>
+</div>
+</body>
+</html>
