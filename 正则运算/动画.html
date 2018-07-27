@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        h1{
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+    <script src="//libs.baidu.com/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        var i=0;var j;
+        function startt() {
+            var elment = document.getElementById("txt").value;
+            $(document).ready(function () {
+                $("#q").click(function () {
+                    $(".a").animate({top: '100px'});
+                    $(".a").animate({left: '1200px'});
+                    $(".a").animate({width: '300px'});
+                    $(".a").animate({left: '800px', top: '400px'});
+                    $(".a").animate({right: '100px', top: '10px'});
+                    $(".a").animate({height: '200px'});
+                    $(".a").animate({opacity: '0.4'});
+                    $(".a").animate({width:'5px',height:'100px'})
+                    $(".b").animate({top: '200px'});
+                    $(".b").animate({left: '1100px'});
+                    $(".b").animate({width: '300px'});
+                    $(".b").animate({left: '200px', top: '400px'});
+                    $(".b").animate({right: '50px', top: '10px'});
+                    $(".b").animate({height: '200px'});
+                    $(".b").animate({opacity: '0.8'});
+                    $(".b").animate({width:'5px',height:'100px'})
+                    $(".c").animate({top: '300px'});
+                    $(".c").animate({left:'1000px'});
+                    $(".c").animate({opacity: '0.7'});
+                    $(".c").animate({right: '800px', left: '400px'});
+                    $(".c").animate({left: '400px', top: '10px'});
+                    $(".c").animate({width: '200px', height: '300px'})
+                    $(".c").animate({width:'5px',height:'100px'})
+                    $(".d").animate({top: '400px'});
+                    $(".d").animate({left:'900px'});
+                    $(".d").animate({opacity: '0.7'});
+                    $(".d").animate({right: '800px', left: '400px'});
+                    $(".d").animate({left: '50px', top: '50px'});
+                    $(".d").animate({width: '200px', height: '300px'})
+                    $(".d").animate({width:'5px',height:'100px'})
+                    $(".e").animate({top: '500px'});
+                    $(".e").animate({left:'800px'});
+                    $(".e").animate({opacity: '0.7'});
+                    $(".e").animate({right: '800px', left: '400px'});
+                    $(".e").animate({left: '100px', top: '100px'});
+                    $(".e").animate({width: '200px', height: '300px'})
+                    $(".e").animate({width:'5px',height:'100px'})
+                    $(".f").animate({top: '600px'});
+                    $(".f").animate({left:'700px'});
+                    $(".f").animate({opacity: '0.7'});
+                    $(".f").animate({right: '800px', left: '400px'});
+                    $(".f").animate({left: '550px', top: '150px'});
+                    $(".f").animate({width: '200px', height: '300px'});
+                    $(".f").animate({width:'5px',height:'100px'})
+                    $(".g").animate({top: '700px'});
+                    $(".g").animate({left:'600px'});
+                    $(".g").animate({opacity: '0.7'});
+                    $(".g").animate({right: '800px', left: '400px'});
+                    $(".g").animate({left: '800px', top: '200px'});
+                    $(".g").animate({width: '200px', height: '300px'})
+                    $(".g").animate({width:'5px',height:'100px'})
+                    $(".h").animate({top: '800px'});
+                    $(".h").animate({left:'500px'});
+                    $(".h").animate({opacity: '0.7'});
+                    $(".h").animate({right: '800px', left: '400px'});
+                    $(".h").animate({left: '900px', top: '300px'});
+                    $(".h").animate({width: '200px', height: '300px'})
+                    $(".h").animate({width:'5px',height:'100px'})
+                    $("#q").click(function () {
+                        $(".a").fadeOut();
+                        $(".b").fadeOut("slow");
+                        $(".c").fadeOut(4000);
+                        $(".d").fadeOut();
+                        $(".e").fadeOut("slow");
+                        $(".f").fadeOut(4000);
+                        $(".g").fadeOut();
+                        $(".h").fadeOut("slow");
+                    });
+                    $("#q").click(function () {
+                        $(".a").fadeIn();
+                        $(".b").fadeIn("slow");
+                        $(".c").fadeIn(4000);
+                        $(".d").fadeIn();
+                        $(".e").fadeIn("slow");
+                        $(".f").fadeIn(4000);
+                        $(".g").fadeIn();
+                        $(".h").fadeIn("slow");
+                    });
+                });
+            });
+            j = setTimeout("startt()", 1000);
+        }
+        function stopp() {
+            clearTimeout(j)
+        }
+    </script>
+</head>
+
+<body onload="startt()">
+<div  id="txt" style="background-color: grey;width: 100%;height: 1000px" >
+<button id="q" onclick="startt()" onclick="stopp()">开始动画</button>
+<!--<button onclick="stopp()">停止动画</button>-->
+<!--<p>默认情况下，所有的 HTML 元素有一个静态的位置，且是不可移动的。
+    如果需要改变为，我们需要将元素的 position 属性设置为 relative, fixed, 或 absolute!</p>-->
+<div class="a" style="background:yellow;height:100px;width:5px;position:absolute; border-top-left-radius: 100px">
+</div>
+<div class="b" style="background:red;height:100px;width:5px;position:absolute;">
+</div>
+<div class="c" style="background:green;height:100px;width:5px;position:absolute;">
+</div>
+    <div class="d" style="background:grey;height:100px;width:5px;position:absolute;">
+    </div>
+    <div class="e" style="background:gainsboro;height:100px;width:5px;position:absolute;">
+    </div>
+    <div class="f" style="background:blue;height:100px;width:5px;position:absolute;">
+    </div>
+    <div class="g" style="background:blueviolet;height:100px;width:5px;position:absolute;">
+    </div>
+    <div class="h" style="background:cadetblue;height:100px;width:5px;position:absolute;">
+    </div>
+</div>
+</body>
+</html>
